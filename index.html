@@ -2,9 +2,9 @@
 <html lang="ja">
 <head>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta charset="Shift_JIS">
+<meta charset="utf-8">
 <meta name="author" content="Coca-Cola(Japan) company,Limited">
-<title>���W���[���f��</title>
+<title>モジュールデモ</title>
 
 <meta name="description" content="">
 <meta name="keywords" content="">
@@ -21,17 +21,43 @@
 <!--[if lt IE 9]>
 <script src="js/html5shiv.js"></script>
 <![endif]-->
+<script src="js/jquery-2.0.0.min.js"></script>
 </head>
 
 <body>
-		<main>
-		   
-		    <p>git test</p>
-		    <p>git test2</p>
-		    
+    <header class="header">
+        <h1>header</h1>
+    </header>
+		<main class="main">
+		  <h1 class="heading-h1">modalモジュール</h1>
+		    <p class="heading">詳細解説</p>
+            <p class="text">モーダルに関する設定をモジュール化し利用を便利にしたいものです。</p>
+            <div class="box">
+                <dl>
+                    <dt><a href="#" class="js-modal" data-modal="fixed">Aデモ</a></dt>
+                    <dd>Aデモはモーダルのposition設定を『fixed』にして上下左右中央表示、かつスクロールしても位置固定。</dd>
+                </dl>
+                <dl>
+                    <dt><a href="#" class="js-modal" data-modal="fixed">Bデモ</a></dt>
+                    <dd>Bデモはモーダルのposition設定を『absolute』にして上下左右中央表示、スクロール時は最初の表示位置まま。</dd>
+                </dl>
+            </div>
 		</main>
+		
+		<div class="overlay"></div>
+        <div class="modal">
+            <div class="modal-inner">
+               <div class="btn-close"><a href="#">X</a></div>
+               <div class="modal-detail">
+                   <h1 class="modal-ttl">モーダル</h1>
+                    <p>モーダル表示されています。</p>
+               </div>
+                <div class="btn-close2"><a href="#">閉じる</a></div>
+            </div>
+        </div>
 
-
-	</div>
+	<footer class="footer">
+        <h1>footer</h1>
+    </footer>
 </body>
 </html>

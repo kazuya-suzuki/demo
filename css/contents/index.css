@@ -1,0 +1,104 @@
+/* clearfix */
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  height: 0;
+  visibility: hidden;
+}
+
+.main:before, .main:after {
+  content: "";
+  display: table;
+}
+.main:after {
+  clear: both;
+}
+
+.box {
+  letter-spacing: -0.5em;
+}
+.box dl {
+  width: 50%;
+  letter-spacing: normal;
+  display: inline-block;
+  padding: 0 20px;
+  box-sizing: border-box;
+  margin: 20px 0 0;
+}
+.box dl dt a {
+  font-size: 14px;
+  color: green;
+  text-decoration: underline;
+}
+.box dl dd {
+  font-size: 14px;
+  line-height: 1.8em;
+  margin: 10px 0 0;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.modal {
+  width: 400px;
+  height: 300px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  background: #ffffff;
+}
+.modal .modal-inner {
+  padding: 20px;
+  position: relative;
+}
+.modal .btn-close:before, .modal .btn-close:after {
+  content: "";
+  display: table;
+}
+.modal .btn-close:after {
+  clear: both;
+}
+.modal .btn-close a {
+  display: block;
+  width: 30px;
+  height: 30px;
+  box-sizing: border-box;
+  padding: 7px 0 0;
+  border: solid 1px #000000;
+  float: right;
+  text-decoration: none;
+  text-align: center;
+  color: #000000;
+  vertical-align: middle;
+}
+.modal .modal-detail {
+  padding: 0 20px;
+}
+.modal .btn-close2 {
+  width: 200px;
+  box-sizing: border-box;
+  border: solid 1px #000000;
+  margin: 50px auto 0;
+}
+.modal .btn-close2 a {
+  width: 100%;
+  display: block;
+  padding: 10px 0;
+  text-decoration: none;
+  text-align: center;
+  color: #000000;
+}
