@@ -72,13 +72,14 @@
             $(".overlay,.modal").fadeIn();
         });
         
-        $('.btn-close, .btn-close2').on('click',function(e){
-            e.preventDefault();
+        $('.btn-close, .btn-close2').on('click',function(event){
+            event.preventDefault();
             $(".overlay, .modal").fadeOut();
+            $('.modal').css({
+                position:''
+            })
         });
-});
-    
-    
+    });
     </script>
 </body>
 </html>
