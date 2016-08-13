@@ -10,7 +10,9 @@
 	* jquery-2.0.0.min.js
 	
 ###解説
-index.htmlを参考にしてもらえればわかりますが  modalを設定したい箇所にaタグを設置しそこに*class="js-modal"*と*data-modal="position設定"*を指定する
+index.htmlを参考にしてもらえればわかりますが  
+modalを設定したい箇所にaタグを設置し  
+*class="js-modal"*と*data-modal="position設定"*を指定する
 
 ###position指定 fixedの場合
 <pre>&lt;a href="#" class="js-modal" data-modal="fixed">Aデモ&lt;/a&gt;</pre>
