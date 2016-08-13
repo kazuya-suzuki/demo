@@ -31,14 +31,16 @@
 		<main class="main">
 		  <h1 class="heading-h1">modalモジュール</h1>
 		    <p class="heading">詳細解説</p>
-            <p class="text">モーダルに関する設定をモジュール化し利用を便利にしたいものです。</p>
+            <p class="text">モーダルのposition指定をdata属性で設定して表示を変化させるものです。<br>data属性がなければpositionはfixedになります。<br>
+            </p>
+            <p class="text-attend">※position fixedの時は<span class="line">window幅、高さ</span>に対して上下左右中央表示<br>absoluteの時は<span class="line">コンテンツの幅、高さ</span>に対して上下左右中央表示になります。</p>
             <div class="box">
                 <dl>
                     <dt><a href="#" class="js-modal" data-modal="fixed">Aデモ</a></dt>
                     <dd>Aデモはモーダルのposition設定を『fixed』にして上下左右中央表示、かつスクロールしても位置固定。</dd>
                 </dl>
                 <dl>
-                    <dt><a href="#" class="js-modal" data-modal="fixed">Bデモ</a></dt>
+                    <dt><a href="#" class="js-modal" data-modal="absolute">Bデモ</a></dt>
                     <dd>Bデモはモーダルのposition設定を『absolute』にして上下左右中央表示、スクロール時は最初の表示位置まま。</dd>
                 </dl>
             </div>
@@ -59,5 +61,64 @@
 	<footer class="footer">
         <h1>footer</h1>
     </footer>
+    <script>
+    $(function(){
+        $('.js-modal').on('click',function(event){
+            event.preventDefault();
+            $cssPos = $(this).data('modal');
+            $('.modal').css({
+                position:$cssPos
+            })
+            $(".overlay,.modal").fadeIn();
+        });
+        
+        $('.btn-close, .btn-close2').on('click',function(e){
+            e.preventDefault();
+            $(".overlay, .modal").fadeOut();
+        });
+        
+        
+ 
+  //テキストリンクをクリックしたら
+    $("#modal-open").click(function(){
+      //body内の最後に<div id="modal-bg"></div>を挿入
+        $("body").append('<div id="modal-bg"></div>');
+ 
+    //画面中央を計算する関数を実行
+    modalResize();
+ 
+    //モーダルウィンドウを表示
+        $("#modal-bg,#modal-main").fadeIn("slow");
+ 
+    //画面のどこかをクリックしたらモーダルを閉じる
+        $("#modal-bg,#modal-main").click(function(){
+            $("#modal-main,#modal-bg").fadeOut("slow",function(){
+          //挿入した<div id="modal-bg"></div>を削除
+                $('#modal-bg').remove() ;
+            });
+ 
+        });
+ 
+    //画面の左上からmodal-mainの横幅・高さを引き、その値を2で割ると画面中央の位置が計算できます
+        $(window).resize(modalResize);
+        function modalResize(){
+ 
+            var w = $(window).width();
+            var h = $(window).height();
+ 
+            var cw = $("#modal-main").outerWidth();
+            var ch = $("#modal-main").outerHeight();
+ 
+        //取得した値をcssに追加する
+            $("#modal-main").css({
+                "left": ((w - cw)/2) + "px",
+                "top": ((h - ch)/2) + "px"
+            });
+        }
+    });
+});
+    
+    
+    </script>
 </body>
 </html>

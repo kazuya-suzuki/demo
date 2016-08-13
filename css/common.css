@@ -533,8 +533,7 @@ body {
 }
 
 .main {
-  min-height: 100px;
-  box-sizing: border-box;
+  min-height: 500px;
   padding: 60px;
   position: relative;
 }
