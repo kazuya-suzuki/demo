@@ -1,19 +1,14 @@
 # Modal module  
 モーダルのposition指定をdata属性で設定して表示を変化させるものです。  
 ## ファイル構成
-* <dl>
-    <dt>index.html</dt>
-</dl>
-* <dl>
-    <dt>css</dt>
-    <dd>common.css</dd>
-    <dd>index.css</dd>
-</dl>
-* <dl>
-    <dt>js</dt>
-    <dd>html5shiv.js</dd>
-    <dd>jquery-2.0.0.min.js</dd>
-</dl>
+* index.html
+* css
+	* common.css
+	* index.css	
+* js
+	* html5shiv.js
+	* jquery-2.0.0.min.js
+	
 ###解説
 index.htmlを参考にしてもらえればわかりますが  modalを設定したい箇所にaタグを設置しそこに*class="js-modal"*と*data-modal="position設定"*を指定する
 
